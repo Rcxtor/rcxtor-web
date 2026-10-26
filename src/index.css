@@ -1,0 +1,85 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-portfolio-bg: #171A19;
+  --color-portfolio-surface: #202522;
+  --color-portfolio-border: #3A403C;
+  --color-portfolio-text: #F0F0E9;
+  --color-portfolio-muted: #929B93;
+  --color-portfolio-accent: #A5C7A7;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+/* Base */
+:root {
+  font-family: "Inter", sans-serif;
+  color: #F0F0E9;
+  background: #171A19;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Smooth anchor navigation */
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #719B79 #171A19;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #171A19;
+}
+
+/* Chrome, Edge, Safari and other WebKit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171A19;
+  border-left: 1px solid #252B27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #526D57;
+  border: 2px solid #171A19;
+  border-radius: 999px;
+  transition: background-color 200ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5C7A7;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #B9D8BB;
+}
+
+/* Respect accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

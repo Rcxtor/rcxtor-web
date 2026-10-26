@@ -1,0 +1,83 @@
+
+.custom-cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.custom-cursor.cursor--visible {
+  visibility: visible;
+}
+
+/* Small white dot — follows the mouse directly */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate3d(-100px, -100px, 0);
+}
+
+/* Light-green circle — trails behind the dot */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid rgb(165 199 167); 
+  border-radius: 50%;
+  background: rgb(159 232 112 / 8%);
+  transform: translate3d(-100px, -100px, 0);
+  transition:
+    width 200ms ease,
+    height 200ms ease,
+    margin 200ms ease;
+  will-change: transform;
+}
+
+/* Only hide the native cursor on desktop */
+@media (pointer: fine) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled body,
+  html.custom-cursor-enabled body * {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-enabled input,
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled select,
+  html.custom-cursor-enabled [contenteditable="true"] {
+    cursor: auto !important;
+  }
+
+  html.custom-cursor-enabled input[type="text"],
+  html.custom-cursor-enabled input[type="email"],
+  html.custom-cursor-enabled input[type="password"],
+  html.custom-cursor-enabled input[type="search"],
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+/* Keep native behavior on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring {
+    transition: none !important;
+  }
+}
