@@ -2,19 +2,23 @@
 const skills = [
   {
     category: 'FRONTEND',
-    items: ['React', 'JavaScript', 'HTML', 'Tailwind CSS'],
+    items: ['React', 'JavaScript (ES6)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite', 'React Router'],
   },
   {
     category: 'BACKEND',
-    items: ['PHP', 'Laravel', 'REST APIs', 'Authentication'],
+    items: ['PHP (Laravel)', 'MySQL', 'REST API design', 'MVC architecture', 'Eloquent ORM'],
   },
   {
-    category: 'DATABASES',
-    items: ['MySQL', 'SQL', 'Data Modeling', 'Query Optimization'],
+    category: 'Tools & Workflow',
+    items: ['Git', 'GitHub', 'Postman', 'Docker', 'AI-assisted development'],
   },
   {
-    category: 'TOOLS & WORKFLOW',
-    items: ['Git', 'GitHub', 'Docker', 'Testing'],
+    category: 'Others',
+    items: ['Python (scikit-learn, Pandas)', 'Unity (C#)', 'PlayCanvas'],
+  },
+  {
+    category: 'Soft Skills',
+    items: ['Critical Thinking', 'Teamwork', 'Time Management'],
   },
 ]
 

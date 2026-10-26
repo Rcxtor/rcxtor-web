@@ -26,8 +26,8 @@ function SiteHeader() {
         AVAILABLE FOR OPPORTUNITIES
       </span>
       <a
-        href="/cv.pdf"
-        download="Saif-Ahmm​ed-Sifat-CV.pdf"
+        href="/CV_download.pdf"
+        download="Saif-Ahmmed-Sifat-CV.pdf"
         className="border border-portfolio-border px-4 py-2
                   font-mono text-xs text-portfolio-text
                   transition-colors hover:border-portfolio-accent

@@ -19,6 +19,26 @@ const projects = [
     github: 'https://github.com/Rcxtor/laravel-url-shortener',
     live: 'https://laravel-url-shortener.vercel.app',
   },
+  {
+    id: 2,
+    name: 'Pet Heaven',
+    category: 'FULL-STACK WEB APPLICATION',
+    description:
+    'A pet adoption platform with pet listings, favorites, and adoption request management.',
+    problem:
+    'Finding pets for adoption and managing adoption requests can be difficult. Pet Heaven provides a centralized platform to discover pets and manage the adoption process.',
+    features: [
+    'Pet listings with image uploads and search filters',
+    'User authentication, profiles, and personalized dashboard',
+    'Favorites and adoption request management',
+    'Adoption status tracking and history',
+    ],
+    stack: ['Laravel', 'React', 'MySQL', 'Axios'],
+    status: 'DEPLOYED',
+    featured: true,
+    github: 'https://github.com/Rcxtor/Pet-Heaven',
+    live: 'https://pet-heaven-gamma.vercel.app/',
+  },
 ]
 
 export default projects
