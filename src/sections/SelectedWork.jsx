@@ -1,26 +1,39 @@
 
 import projects from '../data/projects';
 import FadeIn from "../components/FadeIn";
+import { useState } from "react";
+import ImageLightbox from "../components/ImageLightbox";
 
 
-function ProjectImage({ project, compact = false }) {
+function ProjectImage({ project, compact = false, onPreview }) {
   return (
     <div
-      className={`group relative overflow-hidden border hover:border-2 hover:border-portfolio-accent border-portfolio-border bg-portfolio-surface ${
-        compact ? 'aspect-[3/2]' : 'aspect-[16/10]'
+      className={`group relative overflow-hidden border border-portfolio-border bg-portfolio-surface transition-colors hover:border-portfolio-accent ${
+        compact ? "aspect-[3/2]" : "aspect-[16/10]"
       }`}
     >
       {project.image ? (
-        <img
-          src={project.image}
-          alt={project.imageAlt || `${project.name} project screenshot`}
-          loading="lazy"
-          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-          onError={(event) => {
-            event.currentTarget.style.display = 'none';
-            event.currentTarget.nextElementSibling.hidden = false;
-          }}
-        />
+        <button
+          type="button"
+          onClick={() => onPreview?.(project)}
+          aria-label={`Enlarge ${project.name} screenshot`}
+          className="absolute inset-0 block h-full w-full cursor-zoom-in"
+        >
+          <img
+            src={project.image}
+            alt={project.imageAlt || `${project.name} project screenshot`}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            onError={(event) => {
+              event.currentTarget.style.display = "none";
+              event.currentTarget.nextElementSibling.hidden = false;
+            }}
+          />
+
+          <span className="pointer-events-none absolute bottom-3 right-3 rounded-full border border-white/20 bg-black/60 px-3 py-2 font-mono text-[10px] text-white opacity-0 transition-opacity group-hover:opacity-100">
+            View larger ↗
+          </span>
+        </button>
       ) : null}
 
       <div
@@ -39,7 +52,7 @@ function ProjectImage({ project, compact = false }) {
       <div className="pointer-events-none absolute inset-0 border border-white/5" />
 
       {!compact && (
-        <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-portfolio-bg/80 to-transparent p-4 sm:p-5">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-portfolio-bg/80 to-transparent p-4 sm:p-5">
           <span className="font-mono text-[10px] tracking-[0.16em] text-portfolio-text">
             {project.category}
           </span>
@@ -103,11 +116,11 @@ function ProjectLinks({ github, live }) {
   );
 }
 
-function FeaturedProject({ project, reverse = false }) {
+function FeaturedProject({ project, reverse = false, onPreview  }) {
   return (
     <article className="grid items-center gap-8 border-b border-portfolio-border py-10 md:grid-cols-2 md:gap-12 lg:gap-16 lg:py-14">
       <div className={reverse ? 'md:order-2' : ''}>
-        <ProjectImage project={project} />
+        <ProjectImage project={project} onPreview={onPreview} />
       </div>
 
       <div className={reverse ? 'md:order-1' : ''}>
@@ -161,10 +174,10 @@ function FeaturedProject({ project, reverse = false }) {
   );
 }
 
-function OtherProjectRow({ project }) {
+function OtherProjectRow({ project, onPreview }) {
   return (
     <article className="group grid grid-cols-[88px_minmax(0,1fr)_20px] items-center gap-4 border-b border-portfolio-border py-5 sm:grid-cols-[120px_minmax(0,1fr)_24px] sm:gap-6 sm:py-6">
-      <ProjectImage project={project} compact />
+      <ProjectImage project={project} compact onPreview={onPreview} />
 
       <div className="min-w-0">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -208,6 +221,7 @@ function OtherProjectRow({ project }) {
 }
 
 function SelectedWork() {
+  const [previewImage, setPreviewImage] = useState(null);
   const featuredProjects = projects.filter((project) => project.featured);
   const otherProjects = projects.filter((project) => !project.featured);
 
@@ -247,9 +261,17 @@ function SelectedWork() {
         <div>
           {featuredProjects.map((project, index) => (
             <FeaturedProject
-            key={project.id}
-            project={project}
-            reverse={index % 2 === 1}
+              key={project.id}
+              project={project}
+              reverse={index % 2 === 1}
+              onPreview={(selectedProject) =>
+                setPreviewImage({
+                  src: selectedProject.image,
+                  alt:
+                    selectedProject.imageAlt ||
+                    `${selectedProject.name} project screenshot`,
+                })
+              }
             />
           ))}
         </div>
@@ -265,13 +287,29 @@ function SelectedWork() {
 
             <div>
               {otherProjects.map((project) => (
-                <OtherProjectRow key={project.id} project={project} />
+                <OtherProjectRow
+                  key={project.id}
+                  project={project}
+                  onPreview={(selectedProject) =>
+                    setPreviewImage({
+                      src: selectedProject.image,
+                      alt:
+                        selectedProject.imageAlt ||
+                        `${selectedProject.name} project screenshot`,
+                    })
+                  }
+                />
               ))}
             </div>
           </div>
         </FadeIn>
         )}
       </div>
+      <ImageLightbox
+        src={previewImage?.src}
+        alt={previewImage?.alt}
+        onClose={() => setPreviewImage(null)}
+      />
     </section>
   );
 }

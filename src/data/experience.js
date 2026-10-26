@@ -6,9 +6,9 @@ const experience = [
     organization: ' XR Interactive',
     period: 'February 2026 — May 2026',
     description: [
-      'Built and maintained game features in C# using component-driven architecture.',
-      'Worked in a shared codebase with Git.',
-      'Fixed bugs and optimized performance with teammates during game polish.'
+      'Developed two hyper-casual games in Unity using C#: a tile-matching memory game for a Horlicks event and a moon-finding game featuring a magnifying glass mechanic.',
+      'Implemented gameplay mechanics, player interactions, and core game features while working in a shared codebase.',
+      'Collaborated with teammates using Git to fix bugs, refine gameplay, and polish game features.'
     ],
     technologies: ['Unity', 'C#'],
   },

@@ -10,12 +10,13 @@ import Experience from './sections/Experience'
 import Education from './sections/Education'
 import About from './sections/About'
 import Contact from './sections/Contact'
-
+import FlowingBackground from "./components/FlowingBackground";
 function App() {
   return (
     <main className="min-h-screen bg-portfolio-bg px-6 py-8 text-portfolio-text sm:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <CustomCursor />
+        <FlowingBackground />
         <SiteHeader />
         <Hero />
         <SelectedWork />
