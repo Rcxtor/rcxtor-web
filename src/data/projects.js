@@ -16,6 +16,8 @@ const projects = [
     stack: ['Laravel', 'React', 'MySQL', 'Axios'],
     status: 'DEPLOYED',
     featured: true,
+    image: '/images/projects/tinylink.png',
+    imageAlt: 'TinyLink URL shortener application',
     github: 'https://github.com/Rcxtor/laravel-url-shortener',
     live: 'https://laravel-url-shortener.vercel.app',
   },
@@ -24,21 +26,45 @@ const projects = [
     name: 'Pet Heaven',
     category: 'FULL-STACK WEB APPLICATION',
     description:
-    'A pet adoption platform with pet listings, favorites, and adoption request management.',
+      'A pet adoption platform with pet listings, favorites, and adoption request management.',
     problem:
-    'Finding pets for adoption and managing adoption requests can be difficult. Pet Heaven provides a centralized platform to discover pets and manage the adoption process.',
+      'Finding pets for adoption and managing adoption requests can be difficult. Pet Heaven provides a centralized platform to discover pets and manage the adoption process.',
     features: [
-    'Pet listings with image uploads and search filters',
-    'User authentication, profiles, and personalized dashboard',
-    'Favorites and adoption request management',
-    'Adoption status tracking and history',
+      'Pet listings with image uploads and search filters',
+      'User authentication, profiles, and personalized dashboard',
+      'Favorites and adoption request management',
+      'Adoption status tracking and history',
     ],
     stack: ['Laravel', 'React', 'MySQL', 'Axios'],
     status: 'DEPLOYED',
     featured: true,
+    image: '/images/projects/pet-heaven.png',
+    imageAlt: 'Pet Heaven pet adoption application',
     github: 'https://github.com/Rcxtor/Pet-Heaven',
     live: 'https://pet-heaven-gamma.vercel.app/',
   },
-]
+  {
+    id: 3,
+    name: 'Pet Heaven',
+    category: 'FULL-STACK WEB APPLICATION',
+    description:
+      'A pet adoption platform with pet listings, favorites, and adoption request management.',
+    problem:
+      'Finding pets for adoption and managing adoption requests can be difficult. Pet Heaven provides a centralized platform to discover pets and manage the adoption process.',
+    features: [
+      'Pet listings with image uploads and search filters',
+      'User authentication, profiles, and personalized dashboard',
+      'Favorites and adoption request management',
+      'Adoption status tracking and history',
+    ],
+    stack: ['Laravel', 'React', 'MySQL', 'Axios'],
+    status: 'DEPLOYED',
+    featured: false,
+    image: '/images/projects/pet-heaven.png',
+    imageAlt: 'Pet Heaven pet adoption application',
+    github: 'https://github.com/Rcxtor/Pet-Heaven',
+    live: 'https://pet-heaven-gamma.vercel.app/',
+  },
+];
 
-export default projects
+export default projects;

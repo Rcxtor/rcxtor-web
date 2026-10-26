@@ -47,10 +47,10 @@ const research = [
 const certifications = [
   {
     id: 1,
-    name: 'Meta Front-End Developer',
+    name: 'React Basics by Meta',
     issuer: 'Coursera',
     issued: '2026',
-    credentialUrl: '',
+    credentialUrl: 'https://coursera.org/share/5f9564f9444d46529556f3186c0b4c59',
   },
 ]
 

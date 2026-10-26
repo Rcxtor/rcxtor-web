@@ -4,6 +4,7 @@ import experience from '../data/experience'
 function Experience() {
   return (
     <section id="experience" className="border-t border-portfolio-border py-16 sm:py-20">
+      <div className='mx-auto max-w-7xl px-6 sm:px-10 lg:px-12'>
       <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
         <div>
           <p className="font-mono text-xs tracking-[0.2em] text-portfolio-accent">
@@ -46,7 +47,7 @@ function Experience() {
                 {item.technologies.map((technology) => (
                   <span
                     key={technology}
-                    className="border border-portfolio-border px-2 py-1 font-mono text-xs text-portfolio-muted"
+                    className="border transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border px-2 py-1 font-mono text-xs text-portfolio-muted"
                   >
                     {technology}
                   </span>
@@ -55,6 +56,7 @@ function Experience() {
             </article>
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

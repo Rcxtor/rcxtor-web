@@ -83,3 +83,15 @@ body {
     scroll-behavior: auto !important;
   }
 }
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scroll-down {
+  animation: scrollDown 2.4s cubic-bezier(0.4, 0, 0.2,0) infinite;
+}
