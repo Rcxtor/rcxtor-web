@@ -1,6 +1,9 @@
+import FadeIn from '../components/FadeIn'
+
 function About() {
   return (
     <section id="about" className="border-t border-portfolio-border py-16 sm:py-20">
+      <FadeIn>
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         {/* Left column: Photo card with corner accents */}
@@ -13,11 +16,11 @@ function About() {
             <span
               aria-hidden="true"
               className="absolute -left-1 -top-1 z-10 h-5 w-5 border-l-2 border-t-2 border-portfolio-accent"
-            />
+              />
             <span
               aria-hidden="true"
               className="absolute -bottom-1 -right-1 z-10 h-5 w-5 border-b-2 border-r-2 border-portfolio-accent"
-            />
+              />
 
             <div className="aspect-[4/5] w-full bg-portfolio-surface flex items-center justify-center">
               <span className="font-mono text-xs text-portfolio-muted tracking-widest">
@@ -28,7 +31,7 @@ function About() {
               height="600"
               fetchPriority="high"
               className="aspect-[4/5] w-full bg-portfolio-surface object-cover"
-            />
+              />
               </span>
             </div>
           </div>
@@ -79,6 +82,7 @@ function About() {
         </div>
       </div>
       </div>
+      </FadeIn>
     </section>
   )
 }

@@ -1,9 +1,11 @@
 
 import experience from '../data/experience'
+import FadeIn from '../components/FadeIn'
 
 function Experience() {
   return (
     <section id="experience" className="border-t border-portfolio-border py-16 sm:py-20">
+      <FadeIn>
       <div className='mx-auto max-w-7xl px-6 sm:px-10 lg:px-12'>
       <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
         <div>
@@ -16,8 +18,8 @@ function Experience() {
         <div>
           {experience.map((item) => (
             <article
-              key={item.id}
-              className="border-t border-portfolio-border py-6 first:pt-0 first:border-t-0"
+            key={item.id}
+            className="border-t border-portfolio-border py-6 first:pt-0 first:border-t-0"
             >
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
@@ -34,7 +36,7 @@ function Experience() {
 
               {/* <p className="mt-4 max-w-2xl text-sm leading-6 text-portfolio-muted">
                 {item.description}
-              </p> */}
+                </p> */}
               <ul className="mt-4 max-w-2xl space-y-1.5 text-sm leading-6 text-portfolio-muted list-disc pl-5">
                 {item.description.map((description) => (
                   <li key={description}>
@@ -46,8 +48,8 @@ function Experience() {
               <div className="mt-4 flex flex-wrap gap-2">
                 {item.technologies.map((technology) => (
                   <span
-                    key={technology}
-                    className="border transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border px-2 py-1 font-mono text-xs text-portfolio-muted"
+                  key={technology}
+                  className="border transition-all hover:-translate-y-0.5 active:translate-y-0 duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border px-2 py-1 font-mono text-xs text-portfolio-muted"
                   >
                     {technology}
                   </span>
@@ -58,6 +60,7 @@ function Experience() {
         </div>
       </div>
       </div>
+      </FadeIn>
     </section>
   )
 }

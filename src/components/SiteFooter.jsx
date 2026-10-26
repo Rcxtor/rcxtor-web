@@ -17,7 +17,7 @@ function SiteFooter() {
           <div>
             <a
               href="#top"
-              className="inline-flex items-center gap-3 text-portfolio-text transition-colors hover:text-portfolio-accent"
+              className="inline-flex no-lift items-center gap-3 text-portfolio-text transition-colors hover:text-portfolio-accent"
             >
               <span className="flex h-9 w-9 items-center justify-center border border-portfolio-accent font-mono text-sm text-portfolio-accent">
                 S.

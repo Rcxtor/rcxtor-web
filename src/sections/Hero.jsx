@@ -1,9 +1,11 @@
+import FadeIn from "../components/FadeIn";
 function Hero() {
   return (
     <section
       id="home"
       className="relative py-16 sm:py-24 lg:py-28"
     >
+    <FadeIn>
       {/* Top Grid for Content & Image */}
       <div className="grid items-start gap-12 lg:grid-cols-[1.4fr_0.6fr] lg:gap-16">
         {/* Hero content */}
@@ -121,13 +123,14 @@ function Hero() {
             Full-stack development
           </p>
         </div>
-        <a href="#work" className="group flex w-fit items-center gap-4 font-mono text-xs text-portfolio-muted transition-colors hover:text-portfolio-accent">
+        <a href="#work" className="group no-lift flex w-fit items-center gap-4 font-mono text-xs text-portfolio-muted transition-colors hover:text-portfolio-accent">
           SCROLL
           <span className="relative block h-8 w-px overflow-hidden bg-portfolio-border">
             <span className="absolute inset-x-0 top-0 h-full bg-portfolio-accent animate-scroll-down" />
           </span>
         </a>
       </div>
+    </FadeIn>
     </section>
   )
 }

@@ -1,8 +1,10 @@
 import skills from '../data/skills'
+import FadeIn from '../components/FadeIn'
 
 function Skills() {
   return (
     <section id="skills" className="py-16 sm:py-20">
+      <FadeIn>
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
           <div>
@@ -26,7 +28,7 @@ function Skills() {
                   {group.items.map((skill) => (
                     <span
                     key={skill}
-                    className="border  transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border bg-portfolio-surface px-3 py-1.5 font-mono text-xs text-portfolio-text"
+                    className="border transition-all hover:-translate-y-0.5 active:translate-y-0 duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border bg-portfolio-surface px-3 py-1.5 font-mono text-xs text-portfolio-text"
                     >
                       {skill}
                     </span>
@@ -37,6 +39,7 @@ function Skills() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </section>
   )
 }

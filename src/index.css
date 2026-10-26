@@ -95,3 +95,6 @@ body {
 .animate-scroll-down {
   animation: scrollDown 2.4s cubic-bezier(0.4, 0, 0.2,0) infinite;
 }
+a:not(.no-lift) {
+  @apply transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ;
+}

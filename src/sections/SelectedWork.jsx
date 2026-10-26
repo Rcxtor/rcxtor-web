@@ -1,5 +1,7 @@
 
 import projects from '../data/projects';
+import FadeIn from "../components/FadeIn";
+
 
 function ProjectImage({ project, compact = false }) {
   return (
@@ -56,7 +58,7 @@ function ProjectTags({ stack }) {
       {stack.map((technology) => (
         <span
           key={technology}
-          className="border transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border px-2.5 py-1 font-mono text-[10px] text-portfolio-muted"
+          className="border transition-all hover:-translate-y-0.5 active:translate-y-0 duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border px-2.5 py-1 font-mono text-[10px] text-portfolio-muted"
         >
           {technology}
         </span>
@@ -169,9 +171,11 @@ function OtherProjectRow({ project }) {
           <span className="font-mono text-[10px] text-portfolio-accent">
             {String(project.id).padStart(2, '0')}
           </span>
-          <h3 className="font-medium text-portfolio-text transition-colors group-hover:text-portfolio-accent">
+          <a href={project.live || project.github || '#contact'}
+             target={project.live || project.github ? '_blank' : undefined}
+             rel={project.live || project.github ? 'noreferrer' : undefined} className="font-medium no-lift text-portfolio-text transition-colors hover:text-portfolio-accent">
             {project.name}
-          </h3>
+          </a>
         </div>
 
         <p className="mt-1.5 text-xs leading-5 text-portfolio-muted sm:text-sm sm:leading-6">
@@ -195,7 +199,7 @@ function OtherProjectRow({ project }) {
         target={project.live || project.github ? '_blank' : undefined}
         rel={project.live || project.github ? 'noreferrer' : undefined}
         aria-label={`View ${project.name}`}
-        className="text-lg text-portfolio-muted transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-portfolio-accent"
+        className="text-lg text-portfolio-muted transition-transform hover:-translate-y-1 group-hover:translate-x-1 hover:text-portfolio-accent"
       >
         ↗
       </a>
@@ -212,8 +216,10 @@ function SelectedWork() {
       id="work"
       className=" py-16 sm:py-20"
     >
+
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12">
         {/* Section heading */}
+      <FadeIn>
         <div>
           <p className="font-mono text-xs tracking-wide text-portfolio-accent">
             01 / Selected work
@@ -234,20 +240,24 @@ function SelectedWork() {
             </p>
           )}
         </div>
+      </FadeIn>
 
         {/* Featured projects */}
+      <FadeIn>
         <div>
           {featuredProjects.map((project, index) => (
             <FeaturedProject
-              key={project.id}
-              project={project}
-              reverse={index % 2 === 1}
+            key={project.id}
+            project={project}
+            reverse={index % 2 === 1}
             />
           ))}
         </div>
+      </FadeIn>
 
         {/* Other projects: appears when featured: false projects exist */}
         {otherProjects.length > 0 && (
+        <FadeIn>
           <div className="mt-12">
             <p className="mb-2 font-mono text-xs text-portfolio-muted">
               Other projects
@@ -259,6 +269,7 @@ function SelectedWork() {
               ))}
             </div>
           </div>
+        </FadeIn>
         )}
       </div>
     </section>

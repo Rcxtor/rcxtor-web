@@ -22,7 +22,7 @@ function SiteHeader() {
         <a
           href="#top"
           onClick={closeMenu}
-          className="group flex items-center gap-3"
+          className="group no-lift flex items-center gap-3"
           aria-label="Saif Ahmmed Sifat — home"
         >
           <span className="flex h-9 w-9 items-center justify-center border border-portfolio-accent font-mono text-sm text-portfolio-accent transition-colors group-hover:bg-portfolio-accent group-hover:text-portfolio-bg">

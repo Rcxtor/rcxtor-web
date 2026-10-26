@@ -1,6 +1,9 @@
+import FadeIn from '../components/FadeIn'
+
 function Contact() {
   return (
     <section id="contact" className="border-t border-portfolio-border py-16 sm:py-20">
+    <FadeIn>
       <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-portfolio-accent">
@@ -25,8 +28,8 @@ function Contact() {
               </p>
               <a
                 href="mailto:sefat64@gmail.com"
-                className="mt-2 block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
-              >
+                className="mt-2 no-lift block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
                 sefat64@gmail.com ↗
               </a>
             </div>
@@ -38,8 +41,8 @@ function Contact() {
               </p>
               <a
                 href="tel:+8801533499409"
-                className="mt-2 block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
-              >
+                className="mt-2 no-lift block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
                 +880 15 334 99409 ↗
               </a>
             </div>
@@ -53,14 +56,14 @@ function Contact() {
                 href="https://github.com/Rcxtor"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
-              >
+                className="mt-2 no-lift block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
                 github.com/Rcxtor ↗
               </a>
             </div>
 
             {/* LinkedIn */}
-            <div className="border transition-colors duration-200 hover:border-portfolio-accent hover:text-portfolio-accent border-portfolio-border bg-portfolio-surface p-5">
+            <div className="border border-portfolio-border bg-portfolio-surface p-5">
               <p className="font-mono text-xs uppercase tracking-wider text-portfolio-muted">
                 LinkedIn
               </p>
@@ -68,8 +71,8 @@ function Contact() {
                 href="https://www.linkedin.com/in/saif-ahmed-sifat/"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
-              >
+                className="mt-2 no-lift block text-sm font-medium text-portfolio-text hover:text-portfolio-accent transition-colors"
+                >
                 linkedin.com/in/saif-ahmed-sifat/ ↗
               </a>
             </div>
@@ -80,7 +83,7 @@ function Contact() {
             <a
               href="mailto:sefat64@gmail.com"
               className="inline-flex min-h-11 items-center justify-center gap-3 bg-portfolio-accent px-6 py-3 text-sm font-medium text-portfolio-bg transition-opacity hover:opacity-80"
-            >
+              >
               Send an email
               <span aria-hidden="true">↗</span>
             </a>
@@ -89,12 +92,13 @@ function Contact() {
               href="/CV_download.pdf"
               download="Saif-Ahmmed-Sifat-CV.pdf"
               className="inline-flex min-h-11 items-center justify-center border border-portfolio-border px-6 py-3 text-sm text-portfolio-text transition-colors hover:border-portfolio-accent hover:text-portfolio-accent"
-            >
+              >
               Download CV ↓
             </a>
           </div>
         </div>
       </div>
+      </FadeIn> 
     </section>
   )
 }
