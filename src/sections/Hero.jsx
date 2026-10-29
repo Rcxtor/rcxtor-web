@@ -51,7 +51,7 @@ function Hero() {
             </a>
             <a
               href="/cv.pdf"
-              download="Saif-Ahmmed-Sifat-CV.pdf"
+              download="CV_download.pdf"
               className="inline-flex min-h-11 items-center justify-center gap-2 px-2 py-3 text-sm text-portfolio-accent transition-opacity hover:opacity-70"
             >
               Download CV
